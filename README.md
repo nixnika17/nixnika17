@@ -2,6 +2,7 @@ hey,i'm Nix!programmer and future machatronik engeneer.
 
 here my course,obsidian note,lerning and projects,watch me fly!
 
+![GitHub Strike](https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical)
 ![Nix's GitHub stats](https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical)
 - 🔭 I’m currently working on ...
