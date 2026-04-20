@@ -8,13 +8,22 @@
 
 <br/>
 
-| ⚡ Weekly Progress | 📊 Language Stats |
+| ⚡  Progress | 📊 Language Stats |
 |---|---|
 | <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" height="170px" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true&count_private=true" height="170px" /> |
 
 <br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true" width="85%" />
+
+<br/>
+
+<br/>
+
+<h3>📈 Графік контрибуцій Nix Vail / Benjamin's Graph</h3>
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl" width="90%" />
+</div>
 
 <br/>
 
