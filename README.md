@@ -20,7 +20,7 @@
 
 <br/>
 
-<h3>📈 Графік контрибуцій Nix Vail / Benjamin's Graph</h3>
+<h3>📈  Nix Vail Graph</h3>
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl" width="90%" />
 </div>
