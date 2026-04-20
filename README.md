@@ -1,9 +1,9 @@
-## Hi there 👋
+hey,i'm Nix!programmer and future machatronik engeneer.
 
-<!--
-**nixnika17/nixnika17** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+here my course,obsidian note,lerning and projects,watch me fly!
 
-Here are some ideas to get you started:
+![Nix's GitHub stats](https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical)
+
 
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
@@ -14,3 +14,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+Contact me:
+telegram: t.me/nikavaslnix
+gmail: vasilishenanika@gmail.com
