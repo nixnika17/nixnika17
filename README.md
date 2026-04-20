@@ -1,4 +1,4 @@
-<img src="GitHub Readme Idea - Minimalism Black & White.jpg" width="100%" />
+<img src="photo_2026-04-20_23-44-46.jpg" width="100%" />
 <div align="center">
 
 # ✧ NIX VAIL ✧
