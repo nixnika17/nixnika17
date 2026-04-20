@@ -3,8 +3,7 @@ hey,i'm Nix!programmer and future machatronik engeneer.
 here my course,obsidian note,lerning and projects,watch me fly!
 
 ![Nix's GitHub stats](https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical)
-
-
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical)
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
 - 👯 I’m looking to collaborate on ...
