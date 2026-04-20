@@ -30,6 +30,10 @@
 
 <br/>
 
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=nixnika17&theme=radical&no-bg=true&margin-w=15" alt="trophy" />
+</div>
+
 
 
 
