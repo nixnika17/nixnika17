@@ -10,14 +10,18 @@
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true" width="100%" />
     </td>
   </tr>
-  <tr>
-    <td colspan="2" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true" width="60%" />
-    </td>
-  </tr>
 </table>
--->
-Contact me:
+
+<br/>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true" width="60%" />
+</div>
+
+<br/>
+
+
+--> Contact me:
 telegram: t.me/nikavaslnix
 
 gmail: vasilishenanika@gmail.com
