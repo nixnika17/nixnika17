@@ -1,8 +1,5 @@
 <div align="center">
 
-
-<div align="center">
-
 <img src="1000006993.jpg" width="100%" style="border-radius: 15px;" />
 
 <br/>
@@ -12,23 +9,17 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=───+building+your+own+world+───;Future+Mecatronics+Engineer;Analyzing+Arrays+in+C...;Working+on+Python+OOP..." alt="Typing SVG" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-</p>
-
 <br/>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="50%" align="center" valign="top">
-      <h4> 𓏢 📅 Activity 𓏢 </h4>
-      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=999" width="100%" />
+      <h4> 𓏢 📅 Activity Matrix 𓏢 </h4>
+      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=10.1" width="100%" />
     </td>
     <td width="50%" align="center" valign="top">
       <h4> 𓁹 📊 Coding Time 𓁹 </h4>
-      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&v=999" width="100%" />
+      <img src="https://github-readme-stats-sigma-five.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&v=10.1" width="100%" />
     </td>
   </tr>
 </table>
@@ -42,7 +33,6 @@
 <br/>
 
 [<img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />](https://t.me/nikavaslnix) 
-[<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />](mailto:vasilishenanika@gmail.com)
 
 <br/>
 
