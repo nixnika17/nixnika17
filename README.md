@@ -5,10 +5,6 @@
 
 <img src="1000006993.jpg" width="100%" style="border-radius: 10px;" />
 
-<div align="center">
-
-<img src="1000006993.jpg" width="100%" style="border-radius: 10px;" />
-
 # ✧ NIX VAIL ✧
 ### "building your own world" 🛰️
 
@@ -18,10 +14,9 @@
 
 <br/>
 
-<h4>📈 Your Contribution History</h4>
+<h3>📅 Activity Calendar</h3>
 <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
 
-<br/>
 <br/>
 
 <table width="100%">
@@ -32,12 +27,11 @@
     </td>
     <td width="50%" align="center">
       <h4>📊 Language Overview</h4>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=donut&theme=radical&hide_border=true&count_private=true&langs_count=10" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&theme=radical&hide_border=true&count_private=true&langs_count=10" width="100%" />
     </td>
   </tr>
 </table>
 
-<br/>
 <br/>
 
 <h3>📈 Nix Vail Graph</h3>
