@@ -1,7 +1,3 @@
-<div align="center">
-
-<img src="1000006993.jpg" width="100%" style="border-radius: 10px;" />
-
 # ✧ NIX VAIL ✧
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=building+your+own+world...;Future+Mecatronics+Engineer;Analyzing+Arrays+in+C...;Working+on+Python+OOP..." alt="Typing SVG" />
