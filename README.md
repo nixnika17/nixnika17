@@ -16,13 +16,18 @@
 <br/>
 <br/>
 
-<h4>📅 Activity Calendar</h4>
-<img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
-
-<br/>
-
-<h4>📊 Language Overview</h4>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&theme=radical&hide_border=true&count_private=true&langs_count=10" width="80%" />
+<table width="100%" border="0">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <h4>📅 Activity Calendar</h4>
+      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <h4>📊 Language Overview</h4>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&theme=radical&hide_border=true&count_private=true&langs_count=10" width="100%" />
+    </td>
+  </tr>
+</table>
 
 <br/>
 
