@@ -10,27 +10,19 @@
 
 <br/>
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![Obsidian](https://img.shields.io/badge/Obsidian-%23483699.svg?style=for-the-badge&logo=obsidian&logoColor=white)
+<h4>⚡ Current Streak</h4>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true" width="80%" />
 
 <br/>
+<br/>
 
-<h3>📅 Activity Calendar</h3>
+<h4>📅 Activity Calendar</h4>
 <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
 
 <br/>
 
-<table width="100%">
-  <tr>
-    <td width="50%" align="center">
-      <h4>⚡ Current Streak</h4>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true" width="100%" />
-    </td>
-    <td width="50%" align="center">
-      <h4>📊 Language Overview</h4>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&theme=radical&hide_border=true&count_private=true&langs_count=10" width="100%" />
-    </td>
-  </tr>
-</table>
+<h4>📊 Language Overview</h4>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&theme=radical&hide_border=true&count_private=true&langs_count=10" width="80%" />
 
 <br/>
 
