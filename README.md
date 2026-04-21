@@ -33,6 +33,18 @@
       <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=final" width="100%" />
     </td>
     <td width="50%" align="center" valign="top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <h4> 𓏢 📅 Activity Matrix 𓏢 </h4>
+      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=ultra" width="100%" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <h4> 𓁹 📊 Coding Time 𓁹 </h4>
+      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&langs_count=8&v=ultra" width="100%" />
+    </td>
+  </tr>
+</table>
       <h4> 𓁹 📊 Coding Time 𓁹 </h4>
       <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&v=final" width="100%" />
     </td>
