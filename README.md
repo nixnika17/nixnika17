@@ -1,28 +1,40 @@
 <img src="photo_2026-04-20_23-44-46.jpg" width="100%" />
 <div align="center">
 
+<div align="center">
+
+<img src="1000006993.jpg" width="100%" style="border-radius: 10px;" />
+
 # ✧ NIX VAIL ✧
 ### "building your own world" 🛰️
+
+<br/>
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![Obsidian](https://img.shields.io/badge/Obsidian-%23483699.svg?style=for-the-badge&logo=obsidian&logoColor=white)
 
 <br/>
 
-| ⚡  Progress | 📊 Language Stats |
-|---|---|
-| <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" height="170px" /> | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <h4>⚡ Progress Stats</h4>
+      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <h4>📊 Language Breakdown</h4>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true&count_private=true&langs_count=6" width="100%" />
+    </td>
+  </tr>
+</table>
+
 <br/>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true" width="100%" />
 
 <br/>
 
-<br/>
-
-<h3>📈  Nix Vail Graph</h3>
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl" width="90%" />
-</div>
+<h3>📈 Nix Vail Graph</h3>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl&hide_border=true" width="100%" />
 
 <br/>
 
