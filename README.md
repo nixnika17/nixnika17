@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="1000006993.jpg" width="100%" style="border-radius: 15px;" />
 
 <br/>
 
