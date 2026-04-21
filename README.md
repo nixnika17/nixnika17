@@ -1,21 +1,18 @@
-<img src="photo_2026-04-20_23-44-46.jpg" width="100%" />
 <div align="center">
 
-<div align="center">
-
-<img src="1000006993.jpg" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.4);" />
+<img src="1000006993.jpg" width="100%" style="border-radius: 10px;" />
 
 # ✧ NIX VAIL ✧
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=building+your+own+world...;Future+Mecatronics+Engineer;CS50+Student+2026" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=building+your+own+world...;Future+Mecatronics+Engineer;Developing+YSpiderT...;CS50+Arrays+in+progress..." alt="Typing SVG" />
 </p>
 
-[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)](https://en.cppreference.com/w/c)
-[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
-[![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)](https://www.linux.org/)
-[![Obsidian](https://img.shields.io/badge/Obsidian-483699?style=flat-square&logo=obsidian&logoColor=white)](https://obsidian.md/)
+<h4>🚀 Currently Working On:</h4>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=nixnika17&repo=cs50&theme=radical&hide_border=true" /> 
+<br/>
+<small><i>(This updates automatically when you push code)</i></small>
 
+<br/>
 <br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true" width="90%" />
@@ -42,11 +39,7 @@
 ---
 
 ### 🌙 Late Night Coder | 🦾 Future Engineer 
-> "Everything is an algorithm if you look closely enough."
-
-<p align="left">
-  <img src="https://img.shields.io/badge/Status-Learning_Arrays_in_C-blueviolet?style=for-the-badge" />
-</p>
+> "The code is the law, but the engineer is the architect."
 
 [ 💌 ] **t.me/nikavaslnix** | [ 📧 ] **vasilishenanika@gmail.com**
 
