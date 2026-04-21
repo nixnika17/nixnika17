@@ -16,6 +16,19 @@
 <br/>
 <br/>
 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <h4>📅 Activity Calendar</h4>
+      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&cache_seconds=1800" width="100%" />
+    </td>
+    <td width="50%" align="center" valign="top">
+      <h4>📊 Coding Time (WakaTime)</h4>
+      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&cache_seconds=1800" width="100%" />
+    </td>
+  </tr>
+</table>
+
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true" width="90%" />
 
 <br/>
