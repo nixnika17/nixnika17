@@ -9,7 +9,7 @@
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true&v=1.1" width="90%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true&v=1.2" width="90%" />
 
 <br/>
 
@@ -17,18 +17,18 @@
   <tr>
     <td width="50%" align="center" valign="top">
       <h4>📅 Activity Calendar</h4>
-      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=1.1" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=1.2" width="100%" />
     </td>
     <td width="50%" align="center" valign="top">
       <h4>📊 Coding Time (WakaTime)</h4>
-      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&v=1.1" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&v=1.2" width="100%" />
     </td>
   </tr>
 </table>
 
 <br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl&hide_border=true&v=1.1" width="100%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl&hide_border=true&v=1.2" width="100%" />
 
 <br/>
 
@@ -36,5 +36,4 @@
 ### 🌙 Late Night Coder | 🦾 Future Engineer 
 [ 💌 ] **t.me/nikavaslnix** | [ 📧 ] **vasilishenanika@gmail.com**
 
-</div>
 </div>
