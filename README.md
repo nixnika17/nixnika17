@@ -1,16 +1,14 @@
 <div align="center">
 
-<img src="1000006993.jpg" width="100%" style="border-radius: 10px;" />
-
 # ✧ NIX VAIL ✧
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=building+your+own+world...;Future+Mecatronics+Engineer;Analyzing+Arrays+in+C...;YSpiderT+is+coming+soon..." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=building+your+own+world...;Future+Mecatronics+Engineer;Analyzing+Arrays+in+C...;Working+on+Python+OOP..." alt="Typing SVG" />
 </p>
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)](https://en.cppreference.com/w/c)
-[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)](https://www.linux.org/)
+[![Obsidian](https://img.shields.io/badge/Obsidian-483699?style=flat-square&logo=obsidian&logoColor=white)](https://obsidian.md/)
 
 <br/>
 <br/>
