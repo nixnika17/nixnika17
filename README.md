@@ -14,7 +14,7 @@
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true" width="85%" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true&langs_count=5" width="100%" />
 
 <br/>
 
