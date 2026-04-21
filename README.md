@@ -10,11 +10,10 @@
 
 | ⚡  Progress | 📊 Language Stats |
 |---|---|
-| <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" height="170px" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true&count_private=true" height="170px" /> |
-
+| <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" height="170px" /> | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true&langs_count=5" width="100%" />
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
 
 <br/>
 
