@@ -5,7 +5,7 @@
 
 # 𓋹 ✧ NIX VAIL ✧ 𓋹
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=───+building+your+own+world+───;Future+Mecatronics+Engineer;Analyzing+Arrays+in+C...;Working+on+Python+OOP..." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=───+building+your+own+world+───;Future+Mecatronics+Engineer;Analyzing+Arrays+in+C...;created+to+create..." alt="Typing SVG" />
 </p>
 
 <p align="center">
