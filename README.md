@@ -57,6 +57,8 @@
 <br/>
 <br/>
 
+WakaTime:: https://wakatime.com/dashboard
+
 <p align="center">
   𓂀 𓆃 𓇗 𓋹 𓁺 𓆣 🪐 🛰 🌌
 </p>
