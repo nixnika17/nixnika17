@@ -1,6 +1,5 @@
 <div align="center">
 
-
 <br/>
 
 # 𓋹 ✧ NIX VAIL ✧ 𓋹
@@ -24,18 +23,16 @@
 <br/>
 <br/>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="50%" align="center" valign="top">
-      <h4> 𓏢 📅 Activity Matrix 𓏢 </h4>
-      <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=alchemy" width="100%" />
-    </td>
-    <td width="50%" align="center" valign="top">
-      <h4> 𓁹 📊 Coding Time 𓁹 </h4>
-      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&display_version=true&v=alchemy" width="100%" />
-    </td>
-  </tr>
-</table>
+<div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 300px;">
+    <h4> 𓏢 📅 Activity Matrix 𓏢 </h4>
+    <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=alchemy" width="100%" />
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h4> 𓁹 📊 Coding Time 𓁹 </h4>
+    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&display_version=true&v=alchemy" width="100%" />
+  </div>
+</div>
 
 <br/>
 
@@ -56,6 +53,14 @@
 
 <br/>
 <br/>
+
+WakaTime:: https://wakatime.com/dashboard
+
+<p align="center">
+  𓂀 𓆃 𓇗 𓋹 𓁺 𓆣 🪐 🛰 🌌
+</p>
+
+</div>
 
 WakaTime:: https://wakatime.com/dashboard
 
