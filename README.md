@@ -26,7 +26,7 @@
 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 300px;">
     <h4> 𓏢 📅 Activity Matrix 𓏢 </h4>
-    <img src="https://github-readme-stats.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true&v=alchemy" width="100%" />
+   <img src="https://github-readme-stats.amberwilliams.dev/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h4> 𓁹 📊 Coding Time 𓁹 </h4>
