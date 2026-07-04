@@ -18,8 +18,11 @@
 <br/>
 
 <p align="center">
-<a href="https://wakatime.com/@2c21fab2-044d-474d-96bf-3bcf013cc7ed"><img src="https://wakatime.com/badge/user/2c21fab2-044d-474d-96bf-3bcf013cc7ed.svg" alt="Total time coded since Apr 21 2026" 
+  <a href="https://wakatime.com/@2c21fab2-044d-474d-96bf-3bcf013cc7ed">
+    <img src="https://wakatime.com/badge/user/2c21fab2-044d-474d-96bf-3bcf013cc7ed.svg" alt="Total time coded" />
+  </a>
 </p>
+
 <h3> ⛧ Current Power ⛧ </h3>
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true&v=alchemy" width="90%" />
 
@@ -29,11 +32,11 @@
 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 300px;">
     <h4> 𓏢 📅 Activity Matrix 𓏢 </h4>
-   <img src="https://github-readme-stats.amberwilliams.dev/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=nixnika17&show_icons=true&theme=radical&hide_border=true&count_private=true" width="100%" />
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h4> 𓁹 📊 Coding Time 𓁹 </h4>
-  <img src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true" width="100%" />
+    <img src="https://wakatime.com/share/@2c21fab2-044d-474d-96bf-3bcf013cc7ed/580f5806-a53f-4e12-82aa-c81b50428fa6.svg" width="100%" />
   </div>
 </div>
 
@@ -64,14 +67,3 @@ WakaTime:: https://wakatime.com/dashboard
 </p>
 
 </div>
-
-WakaTime:: https://wakatime.com/dashboard
-
-<p align="center">
-  𓂀 𓆃 𓇗 𓋹 𓁺 𓆣 🪐 🛰 🌌
-</p>
-
-</div>
-
-
-
