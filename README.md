@@ -33,7 +33,7 @@
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h4> 𓁹 📊 Coding Time 𓁹 </h4>
-    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true&display_version=true&v=alchemy" width="100%" />
+  <img src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api/wakatime?username=nixnika17&theme=radical&layout=compact&hide_border=true" width="100%" />
   </div>
 </div>
 
