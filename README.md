@@ -29,7 +29,7 @@
 <h3> 🛠️ Currently Working On 🛠️ </h3>
 
 <p align="center">
-  <b><a href="https://github.com/nixnika17/YOUR-REPO">⚡ Project Name Here</a></b><br/>
+  <b><a href="https://github.com/nixnika17/НАЗВА-РЕПОЗИТОРІЮ">⚡ Project Name Here</a></b><br/>
   <sub>Short description of what you are building right now</sub>
 </p>
 
@@ -41,13 +41,17 @@
 <br/>
 
 <h3> ⛧ Current Power ⛧ </h3>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true&v=alchemy" width="90%" />
+<img src="https://streak-stats.demolab.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true" width="90%" alt="GitHub streak" />
 
 <br/>
 <br/>
 
 <h3> 𓊈 ✧ Contribution Graph ✧ 𓊉 </h3>
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl&hide_border=true&v=alchemy" width="100%" />
+<img src="https://ghchart.rshah.org/ff3399/nixnika17" width="100%" alt="Contribution graph" />
+
+<!-- Старий варіант (працює лише коли живий сервіс на Vercel):
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=nixnika17&theme=nightowl&hide_border=true" width="100%" />
+-->
 
 <br/>
 
