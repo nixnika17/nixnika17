@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff3399,50:7b2ff7,100:0d1117&height=220&section=header&text=NIX%20VAIL&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=%F0%93%8B%B9%20created%20to%20create%20%F0%93%8B%B9&descAlignY=58&descSize=18" width="100%" alt="header" />
+<img src="assets/header.svg" width="100%" alt="NIX VAIL" />
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=1000&color=FF3399&center=true&vCenter=true&width=435&lines=───+building+your+own+world+───;Future+Mechatronics+Engineer;Analyzing+Arrays+in+C...;created+to+create..." alt="Typing SVG" />
@@ -73,18 +73,7 @@ int main(void) {
 
 <br/>
 
-<h3> 📚 Currently Learning 📚 </h3>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/C_Arrays-70%25-ff3399?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/ESP32-40%25-7b2ff7?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Linux-55%25-483699?style=for-the-badge" />
-</p>
-
-<br/>
-
 <h3> ⛧ Current Power ⛧ </h3>
-
 <img src="https://streak-stats.demolab.com/?user=nixnika17&theme=radical&hide_border=true&count_private=true" width="90%" alt="GitHub streak" />
 
 <br/>
@@ -105,18 +94,6 @@ int main(void) {
 <br/>
 <br/>
 
-<h3> 🐍 Contribution Snake 🐍 </h3>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nixnika17/nixnika17/output/github-snake-dark.svg" />
-  <img alt="snake" src="https://raw.githubusercontent.com/nixnika17/nixnika17/output/github-snake.svg" width="100%" />
-</picture>
-
-<br/>
-<br/>
-
----
-
 ### 🌙 Late Night Coder | 🦾 Future Engineer
 > "Everything is an algorithm if you look closely enough."
 
@@ -128,10 +105,6 @@ int main(void) {
 <br/>
 <br/>
 
-<p align="center">
-  𓂀 𓆃 𓇗 𓋹 𓁺 𓆣 🪐 🛰 🌌
-</p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:7b2ff7,100:ff3399&height=120&section=footer" width="100%" alt="footer" />
+<img src="assets/footer.svg" width="100%" alt="created to create" />
 
 </div>
