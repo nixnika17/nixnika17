@@ -29,32 +29,7 @@
 
 <h3> 𓁹 ✧ About Me ✧ 𓁹 </h3>
 
-</div>
-
-```c
-#include <stdio.h>
-
-typedef struct {
-    const char *name;
-    const char *goal;
-    const char *stack[5];
-    const char *mode;
-} Engineer;
-
-int main(void) {
-    Engineer nix = {
-        .name  = "Nix Vail",
-        .goal  = "Mechatronics Engineer",
-        .stack = {"Python", "C", "C++", "Linux", "ESP32"},
-        .mode  = "late night coding"
-    };
-
-    printf("%s -> %s\n", nix.name, nix.goal);
-    return 0;
-}
-```
-
-<div align="center">
+<img src="assets/about.svg" width="80%" alt="About me" />
 
 <br/>
 
