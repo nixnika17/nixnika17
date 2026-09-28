@@ -7,7 +7,6 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=nixnika17&color=ff3399&style=for-the-badge&label=VISITORS" alt="views" />
   <a href="https://wakatime.com/@2c21fab2-044d-474d-96bf-3bcf013cc7ed">
     <img src="https://wakatime.com/badge/user/2c21fab2-044d-474d-96bf-3bcf013cc7ed.svg" alt="Total time coded" />
   </a>
@@ -79,17 +78,9 @@ int main(void) {
 <br/>
 <br/>
 
-<h3> 𓊈 ✧ Stats ✧ 𓊉 </h3>
+<h3> 𓊈 ✧ Tech Orbit ✧ 𓊉 </h3>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixnika17&layout=compact&theme=radical&hide_border=true" height="170" alt="Top languages" />
-</p>
-
-<br/>
-
-<h3> 🏆 Trophies 🏆 </h3>
-
-<img src="https://github-profile-trophy.vercel.app/?username=nixnika17&theme=radical&no-frame=true&column=4" width="100%" alt="Trophies" />
+<img src="assets/orbit.svg" width="100%" alt="Tech orbit" />
 
 <br/>
 <br/>
