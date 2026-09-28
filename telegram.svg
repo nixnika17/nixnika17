@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 90" width="1000" height="90">
+<style>
+text{font-family:'Courier New',Consolas,monospace}
+.s{animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.12}50%{opacity:1}}
+.glow{filter:url(#glow)}
+.l{opacity:0;animation:show .4s ease-out forwards}
+@keyframes show{to{opacity:1}}
+.c{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+</style>
+<defs>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="txt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3399"/><stop offset=".5" stop-color="#c77dff"/><stop offset="1" stop-color="#7b9cff"/></linearGradient>
+<linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient>
+<linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b2ff7" stop-opacity="0"/><stop offset="1" stop-color="#c77dff" stop-opacity=".9"/></linearGradient>
+<linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c77dff" stop-opacity=".9"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></linearGradient>
+<radialGradient id="nebP"><stop offset="0" stop-color="#ff3399" stop-opacity=".22"/><stop offset="1" stop-color="#ff3399" stop-opacity="0"/></radialGradient>
+<radialGradient id="nebV"><stop offset="0" stop-color="#7b2ff7" stop-opacity=".32"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></radialGradient>
+<radialGradient id="planet" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#ffb3dd"/><stop offset=".45" stop-color="#b44bd6"/><stop offset="1" stop-color="#2a0a5e"/></radialGradient>
+<radialGradient id="moon" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#6a5a99"/></radialGradient>
+<radialGradient id="sun" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fff0f8"/><stop offset=".4" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></radialGradient>
+<linearGradient id="tbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#170a33"/></linearGradient>
+<linearGradient id="hor" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b2ff7"/><stop offset=".5" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient>
+</defs>
+
+<rect width="1000" height="90" fill="#0a0418"/>
+
+<circle cx="247.6" cy="45.2" r="0.8" fill="#ffd6ec" class="s" style="animation-delay:3.28s;animation-duration:2.69s"/>
+<circle cx="551.5" cy="83.4" r="1.3" fill="#c3e4ff" class="s" style="animation-delay:2.93s;animation-duration:3.64s"/>
+<circle cx="626.9" cy="52.7" r="1" fill="#c3e4ff" class="s" style="animation-delay:3.99s;animation-duration:3.21s"/>
+<circle cx="976.1" cy="76.7" r="0.6" fill="#d9c8ff" class="s" style="animation-delay:0.13s;animation-duration:4.03s"/>
+<circle cx="936.4" cy="31.3" r="1" fill="#d9c8ff" class="s" style="animation-delay:1.80s;animation-duration:4.38s"/>
+<circle cx="850.3" cy="58.4" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:3.83s;animation-duration:2.50s"/>
+<circle cx="20.6" cy="5.5" r="0.6" fill="#fff" class="s" style="animation-delay:0.70s;animation-duration:4.96s"/>
+<circle cx="464.7" cy="1.5" r="1.3" fill="#c3e4ff" class="s" style="animation-delay:3.65s;animation-duration:4.93s"/>
+<circle cx="371.9" cy="43.6" r="1.6" fill="#ffd6ec" class="s" style="animation-delay:2.36s;animation-duration:4.97s"/>
+<circle cx="495.3" cy="46.7" r="1.3" fill="#fff" class="s" style="animation-delay:3.93s;animation-duration:4.49s"/>
+<circle cx="781.4" cy="89.7" r="1.6" fill="#fff" class="s" style="animation-delay:2.09s;animation-duration:4.44s"/>
+<circle cx="918.5" cy="74.7" r="0.6" fill="#d9c8ff" class="s" style="animation-delay:1.68s;animation-duration:2.26s"/>
+<circle cx="583.9" cy="52.2" r="1.6" fill="#d9c8ff" class="s" style="animation-delay:0.90s;animation-duration:4.19s"/>
+<circle cx="585.0" cy="19.2" r="1.6" fill="#fff" class="s" style="animation-delay:1.29s;animation-duration:2.92s"/>
+<rect x="360" y="16" width="280" height="58" rx="29" fill="#26A5E4" class="glow"/><g transform="translate(410,45)" stroke="#fff" stroke-width="2" fill="none" stroke-linejoin="round"><path d="M-16,0 L16,-13 L10,14 L1,5 L-6,11 L-6,3 L10,-8 L-9,1 Z" fill="#fff" stroke="none"/></g><text x="440" y="52" font-size="20" font-weight="bold" fill="#fff" letter-spacing="3">TELEGRAM</text>
+
+<rect x="0" y="0" width="2" height="90" fill="#5a26b8"/><rect x="998" y="0" width="2" height="90" fill="#5a26b8"/>
+</svg>
