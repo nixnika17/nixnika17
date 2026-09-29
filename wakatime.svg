@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="1000" height="200">
-<rect width="1000" height="200" fill="#0a0418"/>
-<rect x="2" y="2" width="996" height="196" fill="none" stroke="#5a26b8" stroke-width="2" rx="12"/>
-<text x="500" y="105" text-anchor="middle" font-family="Courier New, monospace" font-size="18" fill="#c9b6ff">WakaTime card generates after the first Action run</text>
-<text x="500" y="132" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#7b9cff">Actions → Update WakaTime card → Run workflow</text>
-</svg>
