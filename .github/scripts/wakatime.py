@@ -20,9 +20,11 @@ API_KEY = os.environ.get("WAKATIME_API_KEY", "").strip()
 # Stats API WakaTime завжди вимагає авторизації - з власним ключем читаємо "current"
 # (свою власну статистику), без ключа лишаємо публічну спробу як запасний варіант.
 if API_KEY:
-    API_URL = "https://wakatime.com/api/v1/users/current/stats/?is_including_today=true"
+    API_URL = f"https://wakatime.com/api/v1/users/current/stats/?is_including_today=true&api_key={API_KEY}"
+    print(f"WAKATIME_API_KEY secret found (length {len(API_KEY)}) - using authenticated /users/current endpoint")
 else:
     API_URL = f"https://wakatime.com/api/v1/users/{WAKA_USER}/stats/?is_including_today=true"
+    print("WAKATIME_API_KEY secret NOT found (empty) - falling back to public endpoint, this will likely 404")
 
 STYLE = """<style>
 text{font-family:'Courier New',Consolas,monospace}
