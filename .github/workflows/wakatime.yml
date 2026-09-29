@@ -13,15 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Generate WakaTime card
-        uses: soulteary/github-readme-stats-action@v1.0.0
+      - uses: actions/setup-python@v5
         with:
-          card: wakatime
-          options: 'username=2c21fab2-044d-474d-96bf-3bcf013cc7ed&layout=default&langs_count=6&bg_color=0a0418&title_color=ff3399&text_color=c9b6ff&icon_color=7b2ff7&border_color=5a26b8&hide_border=false'
-          path: assets/wakatime.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
+          python-version: "3.12"
+      - name: Generate WakaTime card
+        run: python .github/scripts/wakatime.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
