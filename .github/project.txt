@@ -1,4 +1,4 @@
-name: NASA Space Apps Challenge
-description: Короткий опис того, над чим працюєте зараз
+name: SATEDAR for NASA Space Apps Challenge
+description: SATEDAR = SATellite Emission & Detection Augmented Radar(website)
 status: In Progress
-tech: ESP32 | C++
+tech: Python
