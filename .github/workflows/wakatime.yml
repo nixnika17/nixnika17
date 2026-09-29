@@ -17,6 +17,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Generate WakaTime card
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: python .github/scripts/wakatime.py
       - name: Commit if changed
         run: |
