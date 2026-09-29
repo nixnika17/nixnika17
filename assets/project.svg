@@ -1,13 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300">
 <style>
 text{font-family:'Courier New',Consolas,monospace}
-.s{animation:tw 3s ease-in-out infinite}
+.s{animation-name:tw;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
 @keyframes tw{0%,100%{opacity:.12}50%{opacity:1}}
 .glow{filter:url(#glow)}
-.l{opacity:0;animation:show .4s ease-out forwards}
-@keyframes show{to{opacity:1}}
-.c{animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
 </style>
 <defs>
 <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -15,15 +11,8 @@ text{font-family:'Courier New',Consolas,monospace}
 <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient>
 <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b2ff7" stop-opacity="0"/><stop offset="1" stop-color="#c77dff" stop-opacity=".9"/></linearGradient>
 <linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c77dff" stop-opacity=".9"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></linearGradient>
-<radialGradient id="nebP"><stop offset="0" stop-color="#ff3399" stop-opacity=".22"/><stop offset="1" stop-color="#ff3399" stop-opacity="0"/></radialGradient>
-<radialGradient id="nebV"><stop offset="0" stop-color="#7b2ff7" stop-opacity=".32"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></radialGradient>
-<radialGradient id="planet" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#ffb3dd"/><stop offset=".45" stop-color="#b44bd6"/><stop offset="1" stop-color="#2a0a5e"/></radialGradient>
-<radialGradient id="moon" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#6a5a99"/></radialGradient>
-<radialGradient id="sun" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fff0f8"/><stop offset=".4" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></radialGradient>
-<linearGradient id="tbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#170a33"/></linearGradient>
-<linearGradient id="hor" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b2ff7"/><stop offset=".5" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient>
+<radialGradient id="nebV"><stop offset="0" stop-color="#7b2ff7" stop-opacity=".35"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></radialGradient>
 </defs>
-
 <rect width="1000" height="300" fill="#0a0418"/>
 <ellipse cx="500" cy="150" rx="420" ry="120" fill="url(#nebV)"/>
 <circle cx="170.3" cy="206.9" r="1" fill="#c3e4ff" class="s" style="animation-delay:3.37s;animation-duration:4.97s"/>
@@ -66,7 +55,5 @@ text{font-family:'Courier New',Consolas,monospace}
 <circle cx="435.0" cy="74.1" r="1.6" fill="#c3e4ff" class="s" style="animation-delay:2.90s;animation-duration:3.37s"/>
 <circle cx="240.7" cy="115.6" r="1.3" fill="#ffd6ec" class="s" style="animation-delay:2.53s;animation-duration:4.89s"/>
 <circle cx="92.0" cy="143.9" r="1.3" fill="#d9c8ff" class="s" style="animation-delay:2.87s;animation-duration:4.67s"/>
-<text x="500" y="72" text-anchor="middle" font-size="24" font-weight="bold" letter-spacing="6" fill="url(#txt)">CURRENTLY WORKING ON</text><path d="M270.0,56.31999999999999 Q270.0,64.32 278.0,64.32 Q270.0,64.32 270.0,72.32 Q270.0,64.32 262.0,64.32 Q270.0,64.32 270.0,56.31999999999999 Z" fill="#ff3399"/><path d="M730.0,56.31999999999999 Q730.0,64.32 738.0,64.32 Q730.0,64.32 730.0,72.32 Q730.0,64.32 722.0,64.32 Q730.0,64.32 730.0,56.31999999999999 Z" fill="#ff3399"/><rect x="108.0" y="63.56999999999999" width="150" height="1.5" fill="url(#fadeL)"/><rect x="742.0" y="63.56999999999999" width="150" height="1.5" fill="url(#fadeR)"/><rect x="180" y="108" width="640" height="150" rx="18" fill="#120726" stroke="url(#bar)" stroke-width="2"/><path transform="translate(226,166)" d="M6,-22 L-12,4 L-1,4 L-6,22 L12,-4 L1,-4 Z" fill="#ffd166" class="glow"/><text x="262" y="172" font-size="30" font-weight="bold" fill="#ff3399">Project Name Here</text><text x="262" y="204" font-size="17" fill="#c9b6ff">Short description of what you are building right now</text><rect x="262" y="224" width="72" height="24" rx="4" fill="#3a3350"/><rect x="334" y="224" width="110" height="24" rx="4" fill="#ff69b4"/><rect x="328" y="224" width="8" height="24" fill="#ff69b4"/><text x="298.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">STATUS</text><text x="389.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">In Progress</text><rect x="500" y="224" width="56" height="24" rx="4" fill="#3a3350"/><rect x="556" y="224" width="120" height="24" rx="4" fill="#7b2ff7"/><rect x="550" y="224" width="8" height="24" fill="#7b2ff7"/><text x="528.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">TECH</text><text x="616.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ESP32 | C++</text>
-
-<rect x="0" y="0" width="2" height="300" fill="#5a26b8"/><rect x="998" y="0" width="2" height="300" fill="#5a26b8"/>
+<rect x="0" y="0" width="2" height="300" fill="#5a26b8"/><rect x="998" y="0" width="2" height="300" fill="#5a26b8"/><text x="500" y="72" text-anchor="middle" font-size="24" font-weight="bold" letter-spacing="6" fill="url(#txt)">CURRENTLY WORKING ON</text><path d="M270.0,56.31999999999999 Q270.0,64.32 278.0,64.32 Q270.0,64.32 270.0,72.32 Q270.0,64.32 262.0,64.32 Q270.0,64.32 270.0,56.31999999999999 Z" fill="#ff3399"/><path d="M730.0,56.31999999999999 Q730.0,64.32 738.0,64.32 Q730.0,64.32 730.0,72.32 Q730.0,64.32 722.0,64.32 Q730.0,64.32 730.0,56.31999999999999 Z" fill="#ff3399"/><rect x="108.0" y="63.56999999999999" width="150" height="1.5" fill="url(#fadeL)"/><rect x="742.0" y="63.56999999999999" width="150" height="1.5" fill="url(#fadeR)"/><rect x="180" y="108" width="640" height="150" rx="18" fill="#120726" stroke="url(#bar)" stroke-width="2"/><path transform="translate(226,166)" d="M6,-22 L-12,4 L-1,4 L-6,22 L12,-4 L1,-4 Z" fill="#ffd166" class="glow"/><text x="262" y="172" font-size="30" font-weight="bold" fill="#ff3399">SATEDAR for NASA Space Apps Challenge</text><text x="262" y="204" font-size="17" fill="#c9b6ff">SATEDAR = SATellite Emission &amp; Detection Augmented Radar(website)</text><rect x="262" y="224" width="72" height="24" rx="4" fill="#3a3350"/><rect x="334" y="224" width="112" height="24" rx="4" fill="#ff69b4"/><rect x="328" y="224" width="8" height="24" fill="#ff69b4"/><text x="298.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">STATUS</text><text x="390.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">In Progress</text><rect x="476" y="224" width="56" height="24" rx="4" fill="#3a3350"/><rect x="532" y="224" width="72" height="24" rx="4" fill="#7b2ff7"/><rect x="526" y="224" width="8" height="24" fill="#7b2ff7"/><text x="504.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">TECH</text><text x="568.0" y="241" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Python</text>
 </svg>
