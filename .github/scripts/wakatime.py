@@ -4,6 +4,7 @@
 налаштування "Display code time publicly" в профілі й від тарифного плану -
 безкоштовні акаунти зберігають детальну статистику по мовах лише за короткий
 період, повна історія за весь час доступна тільки на Premium)."""
+import base64
 import json
 import os
 import urllib.error
@@ -14,8 +15,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 OUT = os.path.join(ROOT, "assets", "wakatime.svg")
 
 WAKA_USER = "2c21fab2-044d-474d-96bf-3bcf013cc7ed"
-# без range в шляху - WakaTime сам віддасть той період, який дозволяє тариф/налаштування приватності
-API_URL = f"https://wakatime.com/api/v1/users/{WAKA_USER}/stats/?is_including_today=true"
+API_KEY = os.environ.get("WAKATIME_API_KEY", "").strip()
+
+# Stats API WakaTime завжди вимагає авторизації - з власним ключем читаємо "current"
+# (свою власну статистику), без ключа лишаємо публічну спробу як запасний варіант.
+if API_KEY:
+    API_URL = "https://wakatime.com/api/v1/users/current/stats/?is_including_today=true"
+else:
+    API_URL = f"https://wakatime.com/api/v1/users/{WAKA_USER}/stats/?is_including_today=true"
 
 STYLE = """<style>
 text{font-family:'Courier New',Consolas,monospace}
@@ -66,7 +73,11 @@ def heading(y, text, fs=22, ls=5):
 
 
 def fetch_data():
-    req = urllib.request.Request(API_URL, headers={"User-Agent": "profile-readme-bot"})
+    headers = {"User-Agent": "profile-readme-bot"}
+    if API_KEY:
+        token = base64.b64encode(f"{API_KEY}:".encode()).decode()
+        headers["Authorization"] = f"Basic {token}"
+    req = urllib.request.Request(API_URL, headers=headers)
     with urllib.request.urlopen(req, timeout=20) as resp:
         return json.load(resp)
 
@@ -135,4 +146,3 @@ def build():
 
 if __name__ == "__main__":
     build()
-
