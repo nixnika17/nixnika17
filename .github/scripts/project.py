@@ -1,6 +1,7 @@
 """Перемальовує assets/project.svg на основі .github/project.txt.
 Картка сама підлаштовує розмір шрифту, ширину і перенос рядків під довжину тексту."""
 import os
+import re
 from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -12,7 +13,28 @@ DEFAULTS = {
     "description": "Short description of what you are building right now",
     "status": "In Progress",
     "tech": "ESP32 | C++",
+    "link": "https://github.com/nixnika17",
 }
+
+README = os.path.join(ROOT, "README.md")
+
+
+def update_readme_link(link):
+    """Синхронізує href навколо project.svg в README.md зі значенням link з конфігу."""
+    if not os.path.exists(README):
+        return False
+    with open(README, encoding="utf-8") as f:
+        content = f.read()
+    new_content, n = re.subn(
+        r'(<a href=")[^"]*("><img src="assets/project\.svg")',
+        lambda m: m.group(1) + link + m.group(2),
+        content,
+    )
+    if n and new_content != content:
+        with open(README, "w", encoding="utf-8") as f:
+            f.write(new_content)
+        return True
+    return False
 
 CHAR_W = 0.6  # приблизна ширина символу моноширинного шрифту відносно font-size
 
@@ -185,3 +207,4 @@ def build():
 
 if __name__ == "__main__":
     build()
+    update_readme_link(read_config()["link"])
