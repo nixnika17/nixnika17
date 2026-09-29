@@ -1,267 +1,66 @@
-
-      <svg
-        width="495"
-        height="220"
-        viewBox="0 0 495 220"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-labelledby="descId"
-      >
-        <title id="titleId"></title>
-        <desc id="descId"></desc>
-        <style>
-          .header {
-            font: 600 18px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
-            fill: #ff3399;
-            animation: fadeInAnimation 0.8s ease-in-out forwards;
-          }
-          @supports(-moz-appearance: auto) {
-            /* Selector detects Firefox */
-            .header { font-size: 15.5px; }
-          }
-          
-    .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #c9b6ff;
-    }
-    @supports(-moz-appearance: auto) {
-      /* Selector detects Firefox */
-      .stat { font-size:12px; }
-    }
-    .lang-name {
-      font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9b6ff;
-    }
-    .stagger {
-      opacity: 0;
-      animation: fadeInAnimation 0.3s ease-in-out forwards;
-    }
-    .bold { font-weight: 700 }
-    .lang-progress {
-      animation: progressAnimation 0.6s ease-in-out forwards;
-    }
-    @keyframes progressAnimation {
-      from {
-        width: 0;
-      }
-    }
-    @keyframes slideInAnimation {
-      from {
-        width: 0;
-      }
-      to {
-        width: calc(100%-100px);
-      }
-    }
-    @keyframes growWidthAnimation {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-    #rect-mask rect{
-      animation: slideInAnimation 1s ease-in-out forwards;
-    }
-  
-
-          
-      /* Animations */
-      @keyframes scaleInAnimation {
-        from {
-          transform: translate(-5px, 5px) scale(0);
-        }
-        to {
-          transform: translate(-5px, 5px) scale(1);
-        }
-      }
-      @keyframes fadeInAnimation {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes slideInAnimation {
-        from {
-          transform: translateX(-10px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      @keyframes bounceInAnimation {
-        0% {
-          transform: scale(0.3);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        70% {
-          transform: scale(0.9);
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-    
-          
-        </style>
-
-        
-
-        <rect
-          data-testid="card-bg"
-          x="0.5"
-          y="0.5"
-          rx="4.5"
-          height="99%"
-          stroke="#5a26b8"
-          width="494"
-          fill="#0a0418"
-          stroke-opacity="1.0"
-        />
-
-        
-      <g
-        data-testid="card-title"
-        transform="translate(25, 35)"
-      >
-        <g transform="translate(0, 0)">
-      <text
-        x="0"
-        y="0"
-        class="header"
-        data-testid="header"
-      >WakaTime Stats</text>
-    </g>
-      </g>
-    
-
-        <g
-          data-testid="main-card-body"
-          transform="translate(0, 55)"
-        >
-          <g transform="translate(0, 0)">
-      <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
-        <text class="stat bold" y="12.5">Python:</text>
-        <text class="stat" x="350" y="12.5" data-testid="lang-name">26 hrs 48 mins</text>
-        
-    <svg width="220" x="110" y="4">
-      <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#c9b6ff"></rect>
-      <svg data-testid="lang-progress" width="93.57%">
-        <rect
-            height="8"
-            fill="#ff3399"
-            rx="5" ry="5" x="0" y="0"
-            class="lang-progress"
-            style="animation-delay: 750ms;"
-        />
-      </svg>
-    </svg>
-  
-      </g>
-    </g><g transform="translate(0, 25)">
-      <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
-        <text class="stat bold" y="12.5">C:</text>
-        <text class="stat" x="350" y="12.5" data-testid="lang-name">51 mins</text>
-        
-    <svg width="220" x="110" y="4">
-      <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#c9b6ff"></rect>
-      <svg data-testid="lang-progress" width="3.01%">
-        <rect
-            height="8"
-            fill="#ff3399"
-            rx="5" ry="5" x="0" y="0"
-            class="lang-progress"
-            style="animation-delay: 900ms;"
-        />
-      </svg>
-    </svg>
-  
-      </g>
-    </g><g transform="translate(0, 50)">
-      <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
-        <text class="stat bold" y="12.5">HTML:</text>
-        <text class="stat" x="350" y="12.5" data-testid="lang-name">35 mins</text>
-        
-    <svg width="220" x="110" y="4">
-      <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#c9b6ff"></rect>
-      <svg data-testid="lang-progress" width="2.05%">
-        <rect
-            height="8"
-            fill="#ff3399"
-            rx="5" ry="5" x="0" y="0"
-            class="lang-progress"
-            style="animation-delay: 1050ms;"
-        />
-      </svg>
-    </svg>
-  
-      </g>
-    </g><g transform="translate(0, 75)">
-      <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
-        <text class="stat bold" y="12.5">CSS:</text>
-        <text class="stat" x="350" y="12.5" data-testid="lang-name">14 mins</text>
-        
-    <svg width="220" x="110" y="4">
-      <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#c9b6ff"></rect>
-      <svg data-testid="lang-progress" width="2.00%">
-        <rect
-            height="8"
-            fill="#ff3399"
-            rx="5" ry="5" x="0" y="0"
-            class="lang-progress"
-            style="animation-delay: 1200ms;"
-        />
-      </svg>
-    </svg>
-  
-      </g>
-    </g><g transform="translate(0, 100)">
-      <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
-        <text class="stat bold" y="12.5">Other:</text>
-        <text class="stat" x="350" y="12.5" data-testid="lang-name">5 mins</text>
-        
-    <svg width="220" x="110" y="4">
-      <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#c9b6ff"></rect>
-      <svg data-testid="lang-progress" width="2.00%">
-        <rect
-            height="8"
-            fill="#ff3399"
-            rx="5" ry="5" x="0" y="0"
-            class="lang-progress"
-            style="animation-delay: 1350ms;"
-        />
-      </svg>
-    </svg>
-  
-      </g>
-    </g><g transform="translate(0, 125)">
-      <g class="stagger" style="animation-delay: 1200ms" transform="translate(25, 0)">
-        <text class="stat bold" y="12.5">Git:</text>
-        <text class="stat" x="350" y="12.5" data-testid="lang-name">3 mins</text>
-        
-    <svg width="220" x="110" y="4">
-      <rect rx="5" ry="5" x="0" y="0" width="220" height="8" fill="#c9b6ff"></rect>
-      <svg data-testid="lang-progress" width="2.00%">
-        <rect
-            height="8"
-            fill="#ff3399"
-            rx="5" ry="5" x="0" y="0"
-            class="lang-progress"
-            style="animation-delay: 1500ms;"
-        />
-      </svg>
-    </svg>
-  
-      </g>
-    </g>
-        </g>
-      </svg>
-    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 184" width="1000" height="184">
+<style>
+text{font-family:'Courier New',Consolas,monospace}
+.s{animation-name:tw;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+@keyframes tw{0%,100%{opacity:.12}50%{opacity:1}}
+.glow{filter:url(#glow)}
+.bar{animation:grow 1.2s ease-out forwards;transform-origin:left}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+</style>
+<defs>
+<filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="txt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3399"/><stop offset=".5" stop-color="#c77dff"/><stop offset="1" stop-color="#7b9cff"/></linearGradient>
+<linearGradient id="barfill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3399"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient>
+<linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b2ff7" stop-opacity="0"/><stop offset="1" stop-color="#c77dff" stop-opacity=".9"/></linearGradient>
+<linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c77dff" stop-opacity=".9"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></linearGradient>
+<radialGradient id="nebV"><stop offset="0" stop-color="#7b2ff7" stop-opacity=".35"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1000" height="184" fill="#0a0418"/>
+<ellipse cx="500" cy="120" rx="460" ry="130" fill="url(#nebV)"/>
+<circle cx="20.1" cy="20.7" r="1.3" fill="#ffd6ec" class="s" style="animation-delay:2.74s;animation-duration:2.42s"/>
+<circle cx="118.6" cy="42.7" r="0.8" fill="#ffd6ec" class="s" style="animation-delay:3.93s;animation-duration:2.10s"/>
+<circle cx="67.6" cy="42.5" r="1.3" fill="#c3e4ff" class="s" style="animation-delay:0.82s;animation-duration:3.78s"/>
+<circle cx="124.3" cy="141.7" r="1.3" fill="#d9c8ff" class="s" style="animation-delay:0.79s;animation-duration:2.99s"/>
+<circle cx="367.1" cy="175.7" r="0.8" fill="#ffd6ec" class="s" style="animation-delay:1.67s;animation-duration:3.99s"/>
+<circle cx="67.1" cy="9.5" r="0.8" fill="#d9c8ff" class="s" style="animation-delay:0.54s;animation-duration:2.44s"/>
+<circle cx="791.3" cy="69.3" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:2.60s;animation-duration:2.66s"/>
+<circle cx="791.8" cy="134.3" r="0.8" fill="#d9c8ff" class="s" style="animation-delay:2.56s;animation-duration:2.66s"/>
+<circle cx="48.8" cy="61.8" r="1" fill="#c3e4ff" class="s" style="animation-delay:1.93s;animation-duration:3.95s"/>
+<circle cx="319.3" cy="39.2" r="0.6" fill="#d9c8ff" class="s" style="animation-delay:3.59s;animation-duration:3.68s"/>
+<circle cx="929.0" cy="154.2" r="1" fill="#fff" class="s" style="animation-delay:0.69s;animation-duration:2.09s"/>
+<circle cx="789.2" cy="69.0" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:1.14s;animation-duration:2.92s"/>
+<circle cx="833.8" cy="162.8" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:0.81s;animation-duration:3.00s"/>
+<circle cx="404.5" cy="8.9" r="0.6" fill="#d9c8ff" class="s" style="animation-delay:0.40s;animation-duration:4.95s"/>
+<circle cx="125.4" cy="35.7" r="1" fill="#ffd6ec" class="s" style="animation-delay:2.85s;animation-duration:4.56s"/>
+<circle cx="476.1" cy="91.7" r="1.6" fill="#d9c8ff" class="s" style="animation-delay:3.44s;animation-duration:4.94s"/>
+<circle cx="490.4" cy="108.7" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:0.55s;animation-duration:4.18s"/>
+<circle cx="689.8" cy="179.1" r="0.6" fill="#d9c8ff" class="s" style="animation-delay:1.96s;animation-duration:4.34s"/>
+<circle cx="470.4" cy="43.7" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:2.33s;animation-duration:3.34s"/>
+<circle cx="985.2" cy="24.3" r="1.6" fill="#fff" class="s" style="animation-delay:3.69s;animation-duration:4.66s"/>
+<circle cx="784.3" cy="174.2" r="1" fill="#ffd6ec" class="s" style="animation-delay:2.22s;animation-duration:3.68s"/>
+<circle cx="513.2" cy="130.6" r="1.6" fill="#c3e4ff" class="s" style="animation-delay:0.91s;animation-duration:2.58s"/>
+<circle cx="612.7" cy="56.8" r="1.3" fill="#d9c8ff" class="s" style="animation-delay:0.53s;animation-duration:2.37s"/>
+<circle cx="778.6" cy="137.1" r="1" fill="#c3e4ff" class="s" style="animation-delay:2.32s;animation-duration:2.50s"/>
+<circle cx="847.5" cy="21.9" r="1.3" fill="#ffd6ec" class="s" style="animation-delay:0.56s;animation-duration:3.14s"/>
+<circle cx="310.3" cy="78.3" r="1" fill="#ffd6ec" class="s" style="animation-delay:3.68s;animation-duration:2.81s"/>
+<circle cx="932.2" cy="7.0" r="1.3" fill="#d9c8ff" class="s" style="animation-delay:1.04s;animation-duration:2.61s"/>
+<circle cx="808.9" cy="67.0" r="1.3" fill="#fff" class="s" style="animation-delay:3.27s;animation-duration:3.15s"/>
+<circle cx="203.3" cy="39.4" r="1" fill="#d9c8ff" class="s" style="animation-delay:2.79s;animation-duration:3.10s"/>
+<circle cx="766.7" cy="12.1" r="0.8" fill="#c3e4ff" class="s" style="animation-delay:3.55s;animation-duration:3.36s"/>
+<circle cx="649.7" cy="121.1" r="1.3" fill="#fff" class="s" style="animation-delay:0.27s;animation-duration:2.46s"/>
+<circle cx="803.3" cy="153.1" r="0.6" fill="#d9c8ff" class="s" style="animation-delay:1.52s;animation-duration:4.27s"/>
+<circle cx="303.6" cy="167.9" r="1.6" fill="#d9c8ff" class="s" style="animation-delay:1.61s;animation-duration:4.33s"/>
+<circle cx="237.5" cy="111.4" r="1.6" fill="#d9c8ff" class="s" style="animation-delay:3.40s;animation-duration:4.01s"/>
+<circle cx="704.5" cy="3.8" r="1.6" fill="#c3e4ff" class="s" style="animation-delay:3.76s;animation-duration:4.02s"/>
+<circle cx="519.0" cy="157.9" r="1" fill="#c3e4ff" class="s" style="animation-delay:1.59s;animation-duration:2.64s"/>
+<circle cx="880.3" cy="141.2" r="0.6" fill="#ffd6ec" class="s" style="animation-delay:3.84s;animation-duration:2.72s"/>
+<circle cx="842.5" cy="75.7" r="1" fill="#d9c8ff" class="s" style="animation-delay:3.93s;animation-duration:4.39s"/>
+<circle cx="68.7" cy="45.7" r="1.3" fill="#c3e4ff" class="s" style="animation-delay:0.56s;animation-duration:2.14s"/>
+<circle cx="315.6" cy="8.2" r="1.3" fill="#ffd6ec" class="s" style="animation-delay:2.15s;animation-duration:3.32s"/>
+<circle cx="147.1" cy="4.3" r="1.3" fill="#c3e4ff" class="s" style="animation-delay:1.09s;animation-duration:4.28s"/>
+<circle cx="664.5" cy="0.6" r="1" fill="#ffd6ec" class="s" style="animation-delay:0.68s;animation-duration:2.27s"/>
+<circle cx="853.3" cy="10.5" r="1.6" fill="#c3e4ff" class="s" style="animation-delay:3.64s;animation-duration:2.97s"/>
+<circle cx="390.9" cy="76.9" r="0.6" fill="#c3e4ff" class="s" style="animation-delay:0.16s;animation-duration:4.19s"/>
+<circle cx="451.8" cy="73.9" r="1.6" fill="#d9c8ff" class="s" style="animation-delay:1.71s;animation-duration:3.67s"/>
+<rect x="0" y="0" width="2" height="184" fill="#5a26b8"/><rect x="998" y="0" width="2" height="184" fill="#5a26b8"/><text x="500" y="60" text-anchor="middle" font-size="24" font-weight="bold" letter-spacing="6" fill="url(#txt)">WAKATIME ANALYTICS · LAST 7 DAYS</text><path d="M147.60000000000002,44.32 Q147.60000000000002,52.32 155.60000000000002,52.32 Q147.60000000000002,52.32 147.60000000000002,60.32 Q147.60000000000002,52.32 139.60000000000002,52.32 Q147.60000000000002,52.32 147.60000000000002,44.32 Z" fill="#ff3399"/><path d="M852.4,44.32 Q852.4,52.32 860.4,52.32 Q852.4,52.32 852.4,60.32 Q852.4,52.32 844.4,52.32 Q852.4,52.32 852.4,44.32 Z" fill="#ff3399"/><rect x="-14.399999999999977" y="51.57" width="150" height="1.5" fill="url(#fadeL)"/><rect x="864.4" y="51.57" width="150" height="1.5" fill="url(#fadeR)"/><rect x="60" y="82" width="880" height="2" fill="url(#barfill)" opacity=".25"/><text x="500" y="130" text-anchor="middle" font-size="15" fill="#7b9cff">could not reach wakatime api</text>
+</svg>
