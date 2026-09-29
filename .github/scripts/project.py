@@ -1,4 +1,5 @@
-"""Перемальовує assets/project.svg на основі .github/project.txt"""
+"""Перемальовує assets/project.svg на основі .github/project.txt.
+Картка сама підлаштовує розмір шрифту, ширину і перенос рядків під довжину тексту."""
 import os
 from html import escape
 
@@ -12,6 +13,8 @@ DEFAULTS = {
     "status": "In Progress",
     "tech": "ESP32 | C++",
 }
+
+CHAR_W = 0.6  # приблизна ширина символу моноширинного шрифту відносно font-size
 
 
 def read_config():
@@ -28,6 +31,26 @@ def read_config():
                 if key in cfg and val:
                     cfg[key] = val
     return cfg
+
+
+def text_w(s, fs):
+    return len(s) * fs * CHAR_W
+
+
+def wrap_to_width(s, fs, max_w):
+    """Розбиває рядок на список рядків так, щоб кожен влазив у max_w при заданому fs."""
+    words = s.split(" ")
+    lines, cur = [], ""
+    for w in words:
+        trial = (cur + " " + w).strip()
+        if text_w(trial, fs) <= max_w or not cur:
+            cur = trial
+        else:
+            lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines
 
 
 STYLE = """<style>
@@ -86,24 +109,68 @@ def chip(x, y, l, r, cl, cr, wl, wr):
 
 def build():
     cfg = read_config()
-    H = 300
-    name = cfg["name"]
-    desc = cfg["description"]
-    status = cfg["status"]
-    tech = cfg["tech"]
+    name, desc, status, tech = cfg["name"], cfg["description"], cfg["status"], cfg["tech"]
+
+    MAX_CARD_W = 860           # максимальна ширина картки (в межах полотна 1000)
+    MIN_CARD_W = 500
+    LEFT_OFF = 82              # відступ тексту від лівого краю картки (під іконку-блискавку)
+    RIGHT_PAD = 40
+
+    # --- підбір розміру шрифту й ширини картки під назву ---
+    name_fs, name_min_fs = 30, 17
+    ideal_w = text_w(name, name_fs) + LEFT_OFF + RIGHT_PAD
+    card_w = max(MIN_CARD_W, min(MAX_CARD_W, ideal_w))
+    avail = card_w - LEFT_OFF - RIGHT_PAD
+    if text_w(name, name_fs) > avail:
+        name_fs = max(name_min_fs, name_fs * avail / text_w(name, name_fs))
+
+    # --- опис: намагаємось влізти в один рядок, інакше зменшуємо шрифт, інакше переносимо ---
+    desc_fs, desc_min_fs = 17, 13
+    desc_lines = [desc]
+    if text_w(desc, desc_fs) > avail:
+        shrunk_fs = max(desc_min_fs, desc_fs * avail / text_w(desc, desc_fs))
+        if text_w(desc, shrunk_fs) <= avail:
+            desc_fs = shrunk_fs
+        else:
+            desc_fs = desc_min_fs
+            desc_lines = wrap_to_width(desc, desc_fs, avail)[:2]  # максимум 2 рядки
+
+    card_x = 500 - card_w / 2
+    text_x = card_x + LEFT_OFF
+    icon_x = card_x + 46
+
+    extra_h = 26 if len(desc_lines) > 1 else 0
+    card_h = 150 + extra_h
+    H = 300 + extra_h
+    card_y = 108
 
     body = heading(72, "CURRENTLY WORKING ON")
-    body += ('<rect x="180" y="108" width="640" height="150" rx="18" fill="#120726" stroke="url(#bar)" stroke-width="2"/>'
-             '<path transform="translate(226,166)" d="M6,-22 L-12,4 L-1,4 L-6,22 L12,-4 L1,-4 Z" fill="#ffd166" class="glow"/>')
-    body += f'<text x="262" y="172" font-size="30" font-weight="bold" fill="#ff3399">{escape(name)}</text>'
-    body += f'<text x="262" y="204" font-size="17" fill="#c9b6ff">{escape(desc)}</text>'
+    body += (f'<rect x="{card_x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h}" rx="18" '
+             f'fill="#120726" stroke="url(#bar)" stroke-width="2"/>')
+    body += (f'<path transform="translate({icon_x:.1f},{card_y+58}) scale(0.9)" '
+             f'd="M6,-22 L-12,4 L-1,4 L-6,22 L12,-4 L1,-4 Z" fill="#ffd166" class="glow"/>')
+    body += f'<text x="{text_x:.1f}" y="{card_y+64}" font-size="{name_fs:.1f}" font-weight="bold" fill="#ff3399">{escape(name)}</text>'
 
+    dy = card_y + 96
+    for line in desc_lines:
+        body += f'<text x="{text_x:.1f}" y="{dy}" font-size="{desc_fs:.1f}" fill="#c9b6ff">{escape(line)}</text>'
+        dy += desc_fs + 8
+
+    chip_y = card_y + 116 + extra_h
     status_w = max(70, len(status) * 8 + 24)
     tech_w = max(70, len(tech) * 8 + 24)
-    body += chip(262, 224, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
-    body += chip(262 + 72 + status_w + 30, 224, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
+    chips_total = 72 + status_w + 30 + 56 + tech_w
+    # якщо чіпи не влазять поруч — переносимо технологію під статус
+    if text_x + chips_total > card_x + card_w - RIGHT_PAD / 2:
+        body += chip(text_x, chip_y, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
+        body += chip(text_x, chip_y + 32, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
+        card_h += 32
+        H += 32
+    else:
+        body += chip(text_x, chip_y, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
+        body += chip(text_x + 72 + status_w + 30, chip_y, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
 
-    nebs = '<ellipse cx="500" cy="150" rx="420" ry="120" fill="url(#nebV)"/>'
+    nebs = f'<ellipse cx="500" cy="150" rx="{card_w/2+60:.0f}" ry="120" fill="url(#nebV)"/>'
 
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 {H}" width="1000" height="{H}">\n'
            f'{STYLE}\n{DEFS}\n'
