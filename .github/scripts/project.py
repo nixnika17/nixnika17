@@ -20,16 +20,22 @@ README = os.path.join(ROOT, "README.md")
 
 
 def update_readme_link(link):
-    """Синхронізує href навколо project.svg в README.md зі значенням link з конфігу."""
+    """Синхронізує href навколо project.svg в README.md зі значенням link з конфігу.
+    Якщо картинка ще не обгорнута в <a href>, бот сам додає обгортку."""
     if not os.path.exists(README):
         return False
     with open(README, encoding="utf-8") as f:
         content = f.read()
-    new_content, n = re.subn(
-        r'(<a href=")[^"]*("><img src="assets/project\.svg")',
-        lambda m: m.group(1) + link + m.group(2),
-        content,
-    )
+
+    # Випадок 1: вже є <a href="...">...img project.svg...</a> - просто міняємо href
+    wrapped = re.compile(r'(<a href=")[^"]*("\s*>\s*<img[^>]*assets/project\.svg[^>]*>\s*</a>)')
+    new_content, n = wrapped.subn(lambda m: m.group(1) + link + m.group(2), content)
+
+    # Випадок 2: картинка "гола", без <a> - додаємо обгортку самі
+    if not n:
+        bare = re.compile(r'(<img[^>]*assets/project\.svg[^>]*/?>)')
+        new_content, n = bare.subn(lambda m: f'<a href="{link}">{m.group(1)}</a>', content, count=1)
+
     if n and new_content != content:
         with open(README, "w", encoding="utf-8") as f:
             f.write(new_content)
