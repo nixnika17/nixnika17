@@ -1,9 +1,13 @@
-name: Update WakaTime card
+name: Update stats
 
 on:
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/scripts/stats.py"
+      - "assets/middle.template.svg"
 
 permissions:
   contents: write
@@ -13,23 +17,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Generate WakaTime card
-        run: |
-          curl -sL "https://github-readme-stats.vercel.app/api/wakatime?username=2c21fab2-044d-474d-96bf-3bcf013cc7ed&layout=default&langs_count=6&bg_color=0a0418&title_color=ff3399&text_color=c9b6ff&icon_color=7b2ff7&border_color=5a26b8&border_radius=0&hide_border=false&hide_title=false" -o assets/wakatime.svg
-          # якщо сервіс повернув помилку (не SVG) - не комітимо биту картинку
-          if ! head -c 100 assets/wakatime.svg | grep -q "<svg"; then
-            echo "WakaTime card fetch failed, response was:"
-            cat assets/wakatime.svg
-            exit 1
-          fi
-
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate stats SVG
+        run: python .github/scripts/stats.py
+        env:
+          GH_USER: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/wakatime.svg
+          git add assets/middle.svg
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update wakatime card"
+            git commit -m "chore: update stats"
             git push
           fi
