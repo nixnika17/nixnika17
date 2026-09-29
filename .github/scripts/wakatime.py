@@ -1,6 +1,12 @@
-"""Малює assets/wakatime.svg на основі публічних даних WakaTime (без сторонніх сервісів)."""
+"""Малює assets/wakatime.svg на основі публічних даних WakaTime (без сторонніх сервісів).
+
+Період беремо той, який сам WakaTime готовий віддати публічно (залежить від
+налаштування "Display code time publicly" в профілі й від тарифного плану -
+безкоштовні акаунти зберігають детальну статистику по мовах лише за короткий
+період, повна історія за весь час доступна тільки на Premium)."""
 import json
 import os
+import urllib.error
 import urllib.request
 from html import escape
 
@@ -8,7 +14,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 OUT = os.path.join(ROOT, "assets", "wakatime.svg")
 
 WAKA_USER = "2c21fab2-044d-474d-96bf-3bcf013cc7ed"
-API_URL = f"https://wakatime.com/api/v1/users/{WAKA_USER}/stats/last_7_days?is_including_today=true"
+# без range в шляху - WakaTime сам віддасть той період, який дозволяє тариф/налаштування приватності
+API_URL = f"https://wakatime.com/api/v1/users/{WAKA_USER}/stats/?is_including_today=true"
 
 STYLE = """<style>
 text{font-family:'Courier New',Consolas,monospace}
@@ -43,7 +50,7 @@ def stars(seed, w, h, n):
     return "\n".join(out)
 
 
-def heading(y, text, fs=24, ls=6):
+def heading(y, text, fs=22, ls=5):
     def star4(x, y, r, fill="#ff3399"):
         return (f'<path d="M{x},{y-r} Q{x},{y} {x+r},{y} Q{x},{y} {x},{y+r} '
                 f'Q{x},{y} {x-r},{y} Q{x},{y} {x},{y-r} Z" fill="{fill}"/>')
@@ -58,34 +65,44 @@ def heading(y, text, fs=24, ls=6):
             + f'<rect x="{sx2+12}" y="{ly-.75}" width="150" height="1.5" fill="url(#fadeR)"/>')
 
 
-def fetch_languages(max_n=6):
+def fetch_data():
     req = urllib.request.Request(API_URL, headers={"User-Agent": "profile-readme-bot"})
     with urllib.request.urlopen(req, timeout=20) as resp:
-        data = json.load(resp)
-    langs = data.get("data", {}).get("languages", []) or []
-    langs = [l for l in langs if l.get("text") and l.get("total_seconds", 0) > 0]
-    return langs[:max_n]
+        return json.load(resp)
 
 
 def build():
+    langs, range_label, error = [], "RECENT ACTIVITY", None
     try:
-        langs = fetch_languages()
+        payload = fetch_data()
+        data = payload.get("data", {}) or {}
+        langs = [l for l in (data.get("languages") or [])
+                  if l.get("text") and l.get("total_seconds", 0) > 0][:6]
+        range_label = (data.get("human_readable_range") or "RECENT ACTIVITY").upper()
+    except urllib.error.HTTPError as e:
+        try:
+            body = e.read().decode("utf-8", "ignore")[:300]
+        except Exception:
+            body = ""
+        error = f"HTTP {e.code}: {body}"
+        print("WakaTime API error:", error)
     except Exception as e:
-        langs = []
         error = str(e)
-    else:
-        error = None
+        print("WakaTime fetch failed:", error)
 
     ROW_H = 34
     TOP = 100
     n = len(langs) if langs else 1
     H = TOP + n * ROW_H + 50
 
-    body = heading(60, "WAKATIME ANALYTICS · LAST 7 DAYS")
+    body = heading(60, f"WAKATIME ANALYTICS · {range_label}")
     body += '<rect x="60" y="82" width="880" height="2" fill="url(#barfill)" opacity=".25"/>'
 
     if not langs:
-        msg = "no public data yet" if not error else "could not reach wakatime api"
+        if error:
+            msg = "waiting for data - check the Action log for details"
+        else:
+            msg = "no public language data for this period yet"
         body += f'<text x="500" y="{TOP+30}" text-anchor="middle" font-size="15" fill="#7b9cff">{escape(msg)}</text>'
     else:
         max_pct = max(l.get("percent", 0) for l in langs) or 1
