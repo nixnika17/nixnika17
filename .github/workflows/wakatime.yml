@@ -1,13 +1,9 @@
-name: Update stats
+name: Update WakaTime card
 
 on:
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/scripts/stats.py"
-      - "assets/middle.template.svg"
 
 permissions:
   contents: write
@@ -17,20 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+
+      - name: Generate WakaTime card
+        uses: soulteary/github-readme-stats-action@v1.0.0
         with:
-          python-version: "3.12"
-      - name: Generate stats SVG
-        run: python .github/scripts/stats.py
-        env:
-          GH_USER: ${{ github.repository_owner }}
-          GH_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          card: wakatime
+          options: 'username=2c21fab2-044d-474d-96bf-3bcf013cc7ed&layout=default&langs_count=6&bg_color=0a0418&title_color=ff3399&text_color=c9b6ff&icon_color=7b2ff7&border_color=5a26b8&hide_border=false'
+          path: assets/wakatime.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/middle.svg
+          git add assets/wakatime.svg
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update stats"
+            git commit -m "chore: update wakatime card"
             git push
           fi
