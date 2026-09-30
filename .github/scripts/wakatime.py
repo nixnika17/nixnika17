@@ -21,11 +21,18 @@ API_KEY = os.environ.get("WAKATIME_API_KEY", "").strip()
 # (свою власну статистику), без ключа лишаємо публічну спробу як запасний варіант.
 API_BASE = "https://api.wakatime.com/api/v1"  # офіційний хост API (не wakatime.com!)
 
+# ресурс stats вимагає явного періоду в шляху (last_7_days/last_30_days/.../all_time) -
+# порожній "/stats/" без періоду не є валідним маршрутом.
+# all_time доступний навіть на безкоштовному плані; на перший запит іноді
+# повертає ще не повністю пораховані дані (is_up_to_date=false) - тоді
+# наступний плановий запуск (раз на 6 годин) підхопить вже свіжі дані.
+RANGE = "all_time"
+
 if API_KEY:
-    API_URL = f"{API_BASE}/users/current/stats/?is_including_today=true&api_key={API_KEY}"
+    API_URL = f"{API_BASE}/users/current/stats/{RANGE}?is_including_today=true&api_key={API_KEY}"
     print(f"WAKATIME_API_KEY secret found (length {len(API_KEY)}) - using authenticated /users/current endpoint")
 else:
-    API_URL = f"{API_BASE}/users/{WAKA_USER}/stats/?is_including_today=true"
+    API_URL = f"{API_BASE}/users/{WAKA_USER}/stats/{RANGE}?is_including_today=true"
     print("WAKATIME_API_KEY secret NOT found (empty) - falling back to public endpoint, this will likely 404")
 
 STYLE = """<style>
@@ -87,13 +94,14 @@ def fetch_data():
 
 
 def build():
-    langs, range_label, error = [], "RECENT ACTIVITY", None
+    langs, range_label, error, still_calculating = [], "RECENT ACTIVITY", None, False
     try:
         payload = fetch_data()
         data = payload.get("data", {}) or {}
         langs = [l for l in (data.get("languages") or [])
                   if l.get("text") and l.get("total_seconds", 0) > 0][:6]
         range_label = (data.get("human_readable_range") or "RECENT ACTIVITY").upper()
+        still_calculating = data.get("is_up_to_date") is False
     except urllib.error.HTTPError as e:
         try:
             body = e.read().decode("utf-8", "ignore")[:300]
@@ -106,12 +114,15 @@ def build():
         print("WakaTime fetch failed:", error)
 
     ROW_H = 34
-    TOP = 100
+    TOP = 116 if still_calculating else 100
     n = len(langs) if langs else 1
     H = TOP + n * ROW_H + 50
 
     body = heading(60, f"WAKATIME ANALYTICS · {range_label}")
     body += '<rect x="60" y="82" width="880" height="2" fill="url(#barfill)" opacity=".25"/>'
+    if still_calculating:
+        body += ('<text x="500" y="97" text-anchor="middle" font-size="12" fill="#7b9cff">'
+                  'still crunching the numbers - refreshes automatically</text>')
 
     if not langs:
         if error:
