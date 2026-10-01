@@ -1,4 +1,5 @@
-"""Перемальовує assets/project.svg на основі .github/project.txt.
+"""Перемальовує assets/project.svg (і project2.svg, project3.svg, ...) на основі
+.github/project.txt. Кожен проєкт - окремий блок, блоки розділяються рядком "---".
 Картка сама підлаштовує розмір шрифту, ширину і перенос рядків під довжину тексту."""
 import os
 import re
@@ -6,7 +7,7 @@ from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CFG = os.path.join(ROOT, ".github", "project.txt")
-OUT = os.path.join(ROOT, "assets", "project.svg")
+README = os.path.join(ROOT, "README.md")
 
 DEFAULTS = {
     "name": "Project Name Here",
@@ -16,24 +17,57 @@ DEFAULTS = {
     "link": "https://github.com/nixnika17",
 }
 
-README = os.path.join(ROOT, "README.md")
+CHAR_W = 0.6  # приблизна ширина символу моноширинного шрифту відносно font-size
 
 
-def update_readme_link(link):
-    """Синхронізує href навколо project.svg в README.md зі значенням link з конфігу.
-    Якщо картинка ще не обгорнута в <a href>, бот сам додає обгортку."""
+def read_configs():
+    """Повертає список конфігів - по одному на кожен проєкт, розділений рядком ---."""
+    if not os.path.exists(CFG):
+        return [dict(DEFAULTS)]
+    with open(CFG, encoding="utf-8") as f:
+        raw = f.read()
+    blocks = re.split(r'(?m)^\s*-{3,}\s*$', raw)
+    configs = []
+    for block in blocks:
+        cfg = dict(DEFAULTS)
+        has_any = False
+        for line in block.splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or ":" not in line:
+                continue
+            key, _, val = line.partition(":")
+            key = key.strip().lower()
+            val = val.strip()
+            if key in cfg and val:
+                cfg[key] = val
+                has_any = True
+        if has_any:
+            configs.append(cfg)
+    return configs or [dict(DEFAULTS)]
+
+
+def out_path(i):
+    name = "project.svg" if i == 0 else f"project{i+1}.svg"
+    return os.path.join(ROOT, "assets", name), name
+
+
+def update_readme_link(filename, link):
+    """Синхронізує href навколо assets/<filename> в README.md зі значенням link.
+    Якщо картинка ще не обгорнута в <a href>, бот сам додає обгортку.
+    Якщо такої картинки в README ще немає взагалі - нічого не робить (її треба
+    додати в README вручну один раз)."""
     if not os.path.exists(README):
         return False
     with open(README, encoding="utf-8") as f:
         content = f.read()
 
-    # Випадок 1: вже є <a href="...">...img project.svg...</a> - просто міняємо href
-    wrapped = re.compile(r'(<a href=")[^"]*("\s*>\s*<img[^>]*assets/project\.svg[^>]*>\s*</a>)')
+    esc_name = re.escape(filename)
+
+    wrapped = re.compile(r'(<a href=")[^"]*("\s*>\s*<img[^>]*assets/' + esc_name + r'[^>]*>\s*</a>)')
     new_content, n = wrapped.subn(lambda m: m.group(1) + link + m.group(2), content)
 
-    # Випадок 2: картинка "гола", без <a> - додаємо обгортку самі
     if not n:
-        bare = re.compile(r'(<img[^>]*assets/project\.svg[^>]*/?>)')
+        bare = re.compile(r'(<img[^>]*assets/' + esc_name + r'[^>]*/?>)')
         new_content, n = bare.subn(lambda m: f'<a href="{link}">{m.group(1)}</a>', content, count=1)
 
     if n and new_content != content:
@@ -42,31 +76,12 @@ def update_readme_link(link):
         return True
     return False
 
-CHAR_W = 0.6  # приблизна ширина символу моноширинного шрифту відносно font-size
-
-
-def read_config():
-    cfg = dict(DEFAULTS)
-    if os.path.exists(CFG):
-        with open(CFG, encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith("#") or ":" not in line:
-                    continue
-                key, _, val = line.partition(":")
-                key = key.strip().lower()
-                val = val.strip()
-                if key in cfg and val:
-                    cfg[key] = val
-    return cfg
-
 
 def text_w(s, fs):
     return len(s) * fs * CHAR_W
 
 
 def wrap_to_width(s, fs, max_w):
-    """Розбиває рядок на список рядків так, щоб кожен влазив у max_w при заданому fs."""
     words = s.split(" ")
     lines, cur = [], ""
     for w in words:
@@ -135,16 +150,14 @@ def chip(x, y, l, r, cl, cr, wl, wr):
             f'<text x="{x+wl+wr/2}" y="{y+17}" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">{escape(r)}</text>')
 
 
-def build():
-    cfg = read_config()
+def build_one(cfg, seed, with_heading):
     name, desc, status, tech = cfg["name"], cfg["description"], cfg["status"], cfg["tech"]
 
-    MAX_CARD_W = 860           # максимальна ширина картки (в межах полотна 1000)
+    MAX_CARD_W = 860
     MIN_CARD_W = 500
-    LEFT_OFF = 82              # відступ тексту від лівого краю картки (під іконку-блискавку)
+    LEFT_OFF = 82
     RIGHT_PAD = 40
 
-    # --- підбір розміру шрифту й ширини картки під назву ---
     name_fs, name_min_fs = 30, 17
     ideal_w = text_w(name, name_fs) + LEFT_OFF + RIGHT_PAD
     card_w = max(MIN_CARD_W, min(MAX_CARD_W, ideal_w))
@@ -152,7 +165,6 @@ def build():
     if text_w(name, name_fs) > avail:
         name_fs = max(name_min_fs, name_fs * avail / text_w(name, name_fs))
 
-    # --- опис: намагаємось влізти в один рядок, інакше зменшуємо шрифт, інакше переносимо ---
     desc_fs, desc_min_fs = 17, 13
     desc_lines = [desc]
     if text_w(desc, desc_fs) > avail:
@@ -161,7 +173,7 @@ def build():
             desc_fs = shrunk_fs
         else:
             desc_fs = desc_min_fs
-            desc_lines = wrap_to_width(desc, desc_fs, avail)[:2]  # максимум 2 рядки
+            desc_lines = wrap_to_width(desc, desc_fs, avail)[:2]
 
     card_x = 500 - card_w / 2
     text_x = card_x + LEFT_OFF
@@ -169,10 +181,14 @@ def build():
 
     extra_h = 26 if len(desc_lines) > 1 else 0
     card_h = 150 + extra_h
-    H = 300 + extra_h
-    card_y = 108
+    top_pad = 72 if with_heading else 40
+    card_y = top_pad + 36
+    H = card_y + card_h + 50
 
-    body = heading(72, "CURRENTLY WORKING ON")
+    body = ""
+    if with_heading:
+        body += heading(72, "CURRENTLY WORKING ON")
+
     body += (f'<rect x="{card_x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h}" rx="18" '
              f'fill="#120726" stroke="url(#bar)" stroke-width="2"/>')
     body += (f'<path transform="translate({icon_x:.1f},{card_y+58}) scale(0.9)" '
@@ -188,7 +204,6 @@ def build():
     status_w = max(70, len(status) * 8 + 24)
     tech_w = max(70, len(tech) * 8 + 24)
     chips_total = 72 + status_w + 30 + 56 + tech_w
-    # якщо чіпи не влазять поруч — переносимо технологію під статус
     if text_x + chips_total > card_x + card_w - RIGHT_PAD / 2:
         body += chip(text_x, chip_y, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
         body += chip(text_x, chip_y + 32, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
@@ -198,20 +213,27 @@ def build():
         body += chip(text_x, chip_y, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
         body += chip(text_x + 72 + status_w + 30, chip_y, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
 
-    nebs = f'<ellipse cx="500" cy="150" rx="{card_w/2+60:.0f}" ry="120" fill="url(#nebV)"/>'
+    nebs = f'<ellipse cx="500" cy="{card_y+40}" rx="{card_w/2+60:.0f}" ry="120" fill="url(#nebV)"/>'
 
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 {H}" width="1000" height="{H}">\n'
            f'{STYLE}\n{DEFS}\n'
            f'<rect width="1000" height="{H}" fill="#0a0418"/>\n{nebs}\n'
-           f'{stars(21, 1000, H, 40)}\n'
+           f'{stars(seed, 1000, H, 40)}\n'
            f'<rect x="0" y="0" width="2" height="{H}" fill="#5a26b8"/>'
            f'<rect x="998" y="0" width="2" height="{H}" fill="#5a26b8"/>'
            f'{body}\n</svg>')
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(svg)
+    return svg
+
+
+def build():
+    configs = read_configs()
+    for i, cfg in enumerate(configs):
+        svg = build_one(cfg, seed=21 + i, with_heading=(i == 0))
+        path, filename = out_path(i)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(svg)
+        update_readme_link(filename, cfg["link"])
 
 
 if __name__ == "__main__":
     build()
-    update_readme_link(read_config()["link"])
-
