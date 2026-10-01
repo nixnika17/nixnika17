@@ -150,17 +150,24 @@ def chip(x, y, l, r, cl, cr, wl, wr):
             f'<text x="{x+wl+wr/2}" y="{y+17}" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">{escape(r)}</text>')
 
 
-def build_one(cfg, seed, with_heading):
+MAX_CARD_W = 860
+MIN_CARD_W = 500
+LEFT_OFF = 82
+RIGHT_PAD = 40
+
+
+def ideal_card_w(cfg):
+    """Ширина картки, якої потребує саме цей проєкт (під назву шрифтом 30)."""
+    return max(MIN_CARD_W, min(MAX_CARD_W, text_w(cfg["name"], 30) + LEFT_OFF + RIGHT_PAD))
+
+
+def build_one(cfg, seed, with_heading, shared_card_w):
     name, desc, status, tech = cfg["name"], cfg["description"], cfg["status"], cfg["tech"]
 
-    MAX_CARD_W = 860
-    MIN_CARD_W = 500
-    LEFT_OFF = 82
-    RIGHT_PAD = 40
-
+    # усі картки в наборі мають однакову ширину (найширшу з потрібних), щоб
+    # виглядати як один комплект, а не різнокаліберні картки
+    card_w = shared_card_w
     name_fs, name_min_fs = 30, 17
-    ideal_w = text_w(name, name_fs) + LEFT_OFF + RIGHT_PAD
-    card_w = max(MIN_CARD_W, min(MAX_CARD_W, ideal_w))
     avail = card_w - LEFT_OFF - RIGHT_PAD
     if text_w(name, name_fs) > avail:
         name_fs = max(name_min_fs, name_fs * avail / text_w(name, name_fs))
@@ -243,8 +250,9 @@ def build_one(cfg, seed, with_heading):
 
 def build():
     configs = read_configs()
+    shared_card_w = max(ideal_card_w(cfg) for cfg in configs)
     for i, cfg in enumerate(configs):
-        svg = build_one(cfg, seed=21 + i, with_heading=(i == 0))
+        svg = build_one(cfg, seed=21 + i, with_heading=(i == 0), shared_card_w=shared_card_w)
         path, filename = out_path(i)
         with open(path, "w", encoding="utf-8") as f:
             f.write(svg)
