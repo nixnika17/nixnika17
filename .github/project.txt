@@ -2,4 +2,12 @@ name: SATEDAR for NASA Space Apps Challenge
 description: SATEDAR = SATellite Emission & Detection Augmented Radar (website)
 status: In Progress
 tech: Python
-link: https://github.com/nixnika17/SATEDAR.git
+link: https://github.com/nixnika17/SATEDAR
+
+---
+
+name: ProstirBot
+description: Опис проєкту тут
+status: In Progress
+tech: Python
+link: https://github.com/nixnika17/ProstirBot
