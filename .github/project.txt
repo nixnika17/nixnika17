@@ -7,7 +7,7 @@ link: https://github.com/nixnika17/SATEDAR
 ---
 
 name: ProstirBot
-description: Опис проєкту тут
+description: Empowers people by finding educational, career, and community opportunities in their region and online.
 status: In Progress
-tech: Python
+tech: Python | airogram
 link: https://github.com/nixnika17/ProstirBot
