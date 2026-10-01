@@ -165,6 +165,8 @@ def build_one(cfg, seed, with_heading):
     if text_w(name, name_fs) > avail:
         name_fs = max(name_min_fs, name_fs * avail / text_w(name, name_fs))
 
+    # опис: намагаємось в один рядок, інакше зменшуємо шрифт, інакше переносимо -
+    # без обмеження кількості рядків (ніколи не обрізаємо текст користувача мовчки)
     desc_fs, desc_min_fs = 17, 13
     desc_lines = [desc]
     if text_w(desc, desc_fs) > avail:
@@ -173,14 +175,33 @@ def build_one(cfg, seed, with_heading):
             desc_fs = shrunk_fs
         else:
             desc_fs = desc_min_fs
-            desc_lines = wrap_to_width(desc, desc_fs, avail)[:2]
+            desc_lines = wrap_to_width(desc, desc_fs, avail)
 
     card_x = 500 - card_w / 2
     text_x = card_x + LEFT_OFF
     icon_x = card_x + 46
 
-    extra_h = 26 if len(desc_lines) > 1 else 0
-    card_h = 150 + extra_h
+    extra_h = max(0, len(desc_lines) - 1) * (desc_fs + 8)
+
+    # чіпи: рахуємо ЗАЗДАЛЕГІДЬ, чи влазять поруч, щоб висота картки одразу
+    # враховувала другий рядок чіпів (а не "росла" вже після того як рамка намальована)
+    status_w = max(70, len(status) * 8 + 24)
+    tech_w = max(70, len(tech) * 8 + 24)
+    chips_total = 72 + status_w + 30 + 56 + tech_w
+    chips_wrap = text_x + chips_total > card_x + card_w - RIGHT_PAD / 2
+
+    # підстраховка: якщо навіть один чіп (TECH або STATUS) не влазить у картку
+    # навіть на своєму окремому рядку - розширюємо картку під нього (в межах MAX_CARD_W)
+    if chips_wrap:
+        widest_chip = max(72 + status_w, 56 + tech_w)
+        needed_w = LEFT_OFF + widest_chip + RIGHT_PAD
+        if needed_w > card_w:
+            card_w = min(MAX_CARD_W, needed_w)
+            card_x = 500 - card_w / 2
+            text_x = card_x + LEFT_OFF
+            icon_x = card_x + 46
+
+    card_h = 150 + extra_h + (32 if chips_wrap else 0)
     top_pad = 72 if with_heading else 40
     card_y = top_pad + 36
     H = card_y + card_h + 50
@@ -189,7 +210,7 @@ def build_one(cfg, seed, with_heading):
     if with_heading:
         body += heading(72, "CURRENTLY WORKING ON")
 
-    body += (f'<rect x="{card_x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h}" rx="18" '
+    body += (f'<rect x="{card_x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h:.1f}" rx="18" '
              f'fill="#120726" stroke="url(#bar)" stroke-width="2"/>')
     body += (f'<path transform="translate({icon_x:.1f},{card_y+58}) scale(0.9)" '
              f'd="M6,-22 L-12,4 L-1,4 L-6,22 L12,-4 L1,-4 Z" fill="#ffd166" class="glow"/>')
@@ -201,14 +222,9 @@ def build_one(cfg, seed, with_heading):
         dy += desc_fs + 8
 
     chip_y = card_y + 116 + extra_h
-    status_w = max(70, len(status) * 8 + 24)
-    tech_w = max(70, len(tech) * 8 + 24)
-    chips_total = 72 + status_w + 30 + 56 + tech_w
-    if text_x + chips_total > card_x + card_w - RIGHT_PAD / 2:
+    if chips_wrap:
         body += chip(text_x, chip_y, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
         body += chip(text_x, chip_y + 32, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
-        card_h += 32
-        H += 32
     else:
         body += chip(text_x, chip_y, "STATUS", status, "#3a3350", "#ff69b4", 72, status_w)
         body += chip(text_x + 72 + status_w + 30, chip_y, "TECH", tech, "#3a3350", "#7b2ff7", 56, tech_w)
